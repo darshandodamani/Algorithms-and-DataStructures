@@ -1,5 +1,5 @@
 import random
-from DSA_4 import FindClosestPoints, distance, generate_random_points, BruteForceClosestPoints, FindClosestPointsNaive
+from DSA_4 import FindClosestPoints, generate_random_points, BruteForceClosestPoints
 
 # Here let me generate 10 random points.
 def main():
@@ -10,19 +10,19 @@ def main():
     # Generate random points
     points = generate_random_points(num_points, x_range, y_range)
 
-    print("Generated Points:")
+    print("Generated Points: ")
     for point in points:
         print("Horizontal:", round(point.x, 2), "Vertical:", round(point.y, 2))
 
     closest_pair_dc = FindClosestPoints(points, points[:])  # Divide and Conquer algorithm
-    closest_pair_naive = FindClosestPointsNaive(points)  # Naive algorithm
+    closest_pair_naive = BruteForceClosestPoints(points)  # Naive algorithm same as of BruteForceClosestPoints
 
     # Print teh decimal value of 2 points
     print("\nClosest points (Divide and Conquer):")
     print("Point 1 - Horizontal:", round(closest_pair_dc[0].x, 2), "Vertical:", round(closest_pair_dc[0].y, 2))
     print("Point 2 - Horizontal:", round(closest_pair_dc[1].x, 2), "Vertical:", round(closest_pair_dc[1].y, 2))
 
-    print("\nClosest points (Naive):")
+    print("\nClosest points (Naive or BruteForceClosestPoints):")
     print("Point 1 - Horizontal:", round(closest_pair_naive[0].x, 2), "Vertical:", round(closest_pair_naive[0].y, 2))
     print("Point 2 - Horizontal:", round(closest_pair_naive[1].x, 2), "Vertical:", round(closest_pair_naive[1].y, 2))
 
