@@ -120,18 +120,3 @@ def merge(arr, p, r, q):
         else:
             arr[k] = R[j]
             j += 1
-
-
-def FindClosestPointsNaive(points):
-    n = len(points)
-    min_distance = float('inf')
-    p5 = p6 = None
-
-    for i in range(n - 1):
-        for j in range(i + 1, n):
-            dist = distance(points[i], points[j])
-            if dist < min_distance:
-                min_distance = dist
-                p5, p6 = points[i], points[j]
-
-    return p5, p6
