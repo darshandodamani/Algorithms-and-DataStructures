@@ -14,7 +14,7 @@ def generate_random_points(num_points, x_range, y_range):
         points.append(Point(x, y))
     return points
 
-def FindClosestPoints(X, Y):
+def FindClosestPoints(X, Y): 
     if len(X) > 3:
         m = len(X) // 2
         l_x = (X[m].x + X[m+1].x) / 2
